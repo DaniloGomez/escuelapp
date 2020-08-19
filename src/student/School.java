@@ -22,11 +22,11 @@ public class School {
 			sum = sum + arrStudent[i].payment;
 		}
 		obtAverage();
-		return sum;
+		return average;
 	}
-	
+	float average =0;
 	public float obtAverage() {
-		float average =0;
+		
 		average = sum / quantity;
 		
 		return average;
