@@ -19,7 +19,7 @@ public class Program {
 		float maxPayment = High.maxPayment();
 		System.out.println("Maximum payment of students is: " + maxPayment);
 		
-		float diffAverage = High.sum - High.maxPayment;
+		float diffAverage = High.average - High.maxPayment;
 		System.out.println("The difference between average and maximum payment is: " + diffAverage);
 	}
 
