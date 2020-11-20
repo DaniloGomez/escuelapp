@@ -16,4 +16,18 @@ public class SalesNetwork {
 		sellerList.insertSeller(seller);
 	}
 	
+	public float balance(Seller seller) {
+		float totalBalance = 0;
+		float getDiscount = (membershipInitialFee * membershipDiscountPercentaje)/100;
+			totalBalance = (membershipInitialFee - getDiscount);
+			SellerNode tmp = sellerList.head.next;
+			
+			while(tmp.next !=null) {
+				
+				totalBalance = (balance(seller) * commissionProfitPercentaje)/100;
+				
+			}
+		return totalBalance;
+	}
+	
 }

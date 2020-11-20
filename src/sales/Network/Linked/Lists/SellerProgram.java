@@ -22,6 +22,8 @@ public class SellerProgram {
 		
 		networkList.insertNetwork(n1);
 
+		float balance = n1.balance(s1);
+		System.out.println(balance);
 
 	}
 
