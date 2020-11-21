@@ -42,5 +42,24 @@ public class School  implements Comparable<School>{
 		System.out.println("Rating ordened: " + OtherSchool.getRatingStudent());
 		return OtherSchool.getRatingStudent() - this.getRatingStudent();
 	}
+	
+	float totalEnrollment;
+	public float getTotalEnrollment() {
+		if(studentList.size() == 0) {
+			return 0;
+		}
+		for(Student student : studentList) {
+			totalEnrollment = totalEnrollment + student.valueEnrollment;
+		}
+		return totalEnrollment;
+	}
+	
+	String AsMostRep;
+	String asignatureMostBiggest() {
+		for(Student student : studentList) {
+			AsMostRep = student.asignatureMoreRepeat();
+		}
+		return AsMostRep;
+	}
 
 }

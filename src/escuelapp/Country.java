@@ -108,4 +108,50 @@ public class Country {
 		
 		return most;
 	}
+	
+	public void totalEnrollment() {
+		calculateTotalEnrollment(root);
+	}
+	
+	float totalEnroll;
+	float calculateTotalEnrollment(CityNode node) {
+		if(node==null) {
+			return 0;
+		}
+		totalEnroll = totalEnroll + node.city.getEnrollmentFull();
+		calculateTotalEnrollment(node.right);
+		calculateTotalEnrollment(node.left);
+		
+		return totalEnroll;
+		
+	}
+	
+	public void mostRepeat() {
+		mostRepeat(root);
+	}
+	
+	String mostRepeat;
+	String mostRepeat(CityNode node) {
+		if(node == null) {
+			return null;
+		}
+		mostRepeat = node.city.AsignatureMostRep();
+		mostRepeat(node.right);
+		mostRepeat(node.left);
+		
+		return mostRepeat;
+	}
+	
+	/*Hashtable<String, Integer> enrollment = new Hashtable<String, Integer>();
+	Enumeration names;
+	String key;
+	 
+	enrollment.put(arrDataStudent[0], Integer.parseInt(arrDataStudent[1]));
+	names = enrollment.keys();
+	
+	while(names.hasMoreElements()) {
+		key = (String) names.nextElement();
+		System.out.println("Student: " + key + " ID: " + enrollment.get(key));
+	}*/
+	
 }

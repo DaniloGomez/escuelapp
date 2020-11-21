@@ -3,6 +3,8 @@ package escuelapp;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 public class Program {
 
@@ -35,8 +37,8 @@ public class Program {
 					
 					for(int l=0; l<quantStudent; l++) {
 						arrDataStudent = bf.readLine().split(",");
-						Student student = new Student(arrDataStudent[0], Integer.parseInt(arrDataStudent[1]));
-						int quantAsignature = Integer.parseInt(arrDataStudent[2]);
+						Student student = new Student(arrDataStudent[0], Integer.parseInt(arrDataStudent[1]), Float.parseFloat(arrDataStudent[2]));
+						int quantAsignature = Integer.parseInt(arrDataStudent[3]);
 						
 						for(int t=0; t<quantAsignature; t++) {
 							arrDataAsignature = bf.readLine().split(",");
@@ -49,8 +51,23 @@ public class Program {
 					city.queueSchool.add(school);
 				}
 				country.addCity(city);
-			}
+				}
 			float totalRating = country.getTotalRating(country.root);
+			float totalEnrollment = country.calculateTotalEnrollment(country.root);
+			System.out.println("Total Collection Enrollment: $" + totalEnrollment);
+			
+			
+			City search = country.search(2);
+			
+			if(search == null) {
+				System.out.println("ID NOT found");
+			}
+			else {
+				System.out.println("City found, name: " + search.nameCity);
+			}
+			
+			String mostRepeat = country.mostRepeat(country.root);
+			System.out.println("Asignature most repeat is: " + mostRepeat);
 			
 		}
 		

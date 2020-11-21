@@ -39,4 +39,23 @@ public class City {
 		return totalRatingCity;
 	}
 	
+	float totalEnrollment;
+	float getEnrollmentFull() {
+		if(queueSchool.size() == 0) {
+			return 0;
+		}
+		for(School school : queueSchool) {
+			totalEnrollment = totalEnrollment + school.getTotalEnrollment();
+		}
+		return totalEnrollment;
+	}
+	
+	String AsMostRep;
+	String AsignatureMostRep() {
+		for(School school : queueSchool) {
+			AsMostRep = school.asignatureMostBiggest();
+		}
+		return AsMostRep;
+	}
+	
 }
